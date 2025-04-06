@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
+
+// Logo toolbar
 #toolbar-logo {
   flex-grow: 1;
   display: flex;
@@ -7,4 +10,100 @@
   img {
     height: 45px;
   }
+}
+
+// Footer styles
+ion-footer {
+  font-family: Inter;
+  border-top: 0;
+  margin-top: 0;
+  padding: 0 27px;
+  background-color: #121212;
+}
+
+// Footer top content
+.footer-content-top {
+  height: auto; // Allow it to grow
+  display: grid;
+  grid-template-columns: 1fr; // By default, on small screens: one column
+  gap: 2rem;
+  padding: 2rem;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr; // On medium or large screens: two columns
+  }
+
+  padding-bottom: 3rem;
+  padding-left: calc(4rem / 1.0);
+  padding-right: calc(4rem / 1.0);
+}
+
+// Styles for footer block headings
+.footer-content-top h2 {
+  color: #f8f8f8;
+  font-size: 18px;
+}
+
+// Footer block list
+ul.footer-block {
+  padding: 0;
+  list-style: none;
+}
+
+ul.footer-block li {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+ul.footer-block li a {
+  color: #919191;
+  text-decoration: none;
+}
+
+ul.footer-block li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+// Social media list
+.list-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.list-social_item a {
+  padding: 11px;
+  color: white;
+  font-size: 24px;
+}
+
+// Footer bottom content
+.footer__content-bottom {
+  flex-wrap: wrap;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  row-gap: 1.5rem;
+}
+
+.footer__content-bottom {
+  border-top: solid .1rem rgba(255,255,255, .08);
+}
+
+// Payment list
+.list-payment {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -0.5rem 0;
+  padding-top: 1rem;
+  padding-left: 0;
+}
+
+.list-payment__item {
+  align-items: center;
+  display: flex;
+  padding: 0.5rem;
 }
