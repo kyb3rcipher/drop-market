@@ -1,8 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="menu-outline"></ion-icon></ion-button>
+    </ion-buttons>
+
+    <div id="toolbar-logo">
+      <img src="/assets/logo.png" alt="Drop-Market logo" />
+    </div>    
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="search-outline"></ion-icon></ion-button>
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +21,5 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
 </ion-content>
