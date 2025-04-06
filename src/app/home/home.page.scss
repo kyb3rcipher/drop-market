@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
 
-// Logo toolbar
-#toolbar-logo {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 45px;
-  }
-}
-
 // Footer styles
 ion-footer {
   font-family: Inter;
@@ -57,6 +45,7 @@ ul.footer-block li {
 ul.footer-block li a {
   color: #919191;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 ul.footer-block li a:hover {
@@ -85,9 +74,6 @@ ul.footer-block li a:hover {
   padding-left: 0;
   padding-right: 0;
   row-gap: 1.5rem;
-}
-
-.footer__content-bottom {
   border-top: solid .1rem rgba(255,255,255, .08);
 }
 
