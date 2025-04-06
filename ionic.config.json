@@ -1,0 +1,7 @@
+{
+  "name": "drop-market",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
