@@ -1,5 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap');
 
+// Content styles
+swiper-container {
+  height: 60vh;
+  width: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.slideshow-text h2,
+.slideshow-text p {
+  color: white;
+}
+
+.slideshow-text h2 {
+  font-size: 40px;
+}
+
+.banner-text {
+  margin-bottom: 20px;
+}
+.button-primary {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 5px solid white;
+  text-decoration: none;
+}
+.button-primary:hover {
+  padding: 11px 21px;
+}
+
 // Footer styles
 ion-footer {
   font-family: Inter;

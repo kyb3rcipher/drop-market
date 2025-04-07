@@ -7,7 +7,7 @@
     <ion-title class="ion-text-center">
       <img src="/assets/logo.png" alt="Drop-Market logo" />
     </ion-title>
-    
+
     <ion-buttons slot="end">
       <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="search-outline"></ion-icon></ion-button>
       <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon></ion-button>
@@ -17,10 +17,60 @@
 
 
 <ion-content [fullscreen]="true">
-  <swiper-container>
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+  <swiper-container pagination="true" autoplay-delay="2000">
+    <!-- 1 -->
+    <swiper-slide>
+      <div class="slide-content">
+        <img src="assets/home/slider1.webp" class="slide-image" />
+        <div class="slideshow-text">
+          <h2>
+            <strong>Compra Una Gorra y la Segunda Llévatela al 50% OFF!</strong>
+          </h2>
+          <div class="banner-text">
+            <p>Envíos Gratis en compras mayores a $3,000MXN</p>
+          </div>
+          <div class="banner-buttons">
+            <a href="#" class="button button-primary" tabindex="-1">COMPRAR AHORA</a>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <!-- 2 -->
+    <swiper-slide>
+      <div class="slide-content">
+        <img src="assets/home/slider2.webp" class="slide-image" />
+        <div class="slideshow-text">
+          <h2>
+            <strong>30% OFF en JEFF HAMILTON</strong>
+          </h2>
+          <div class="banner-text">
+            <p>Por tiempo muy limitado!</p>
+          </div>
+          <div class="banner-buttons">
+            <a href="#" class="button button-primary" tabindex="-1">COMPRAR AHORA</a>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+    
+    <!-- 3 -->
+    <swiper-slide>
+      <div class="slide-content">
+        <img src="assets/home/slider3.webp" class="slide-image" />
+        <div class="slideshow-text">
+          <h2>
+            <strong>ATENCION PERSONALIZADA</strong>
+          </h2>
+          <div class="banner-text">
+            <p>Te ayudamos a encontrar los Articulos de Lujo tus sueños</p>
+          </div>
+          <div class="banner-buttons">
+            <a href="#" class="button button-primary" tabindex="-1">CONTACTANOS</a>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
   </swiper-container>
 
 <ion-footer color="dark">
