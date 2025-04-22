@@ -153,3 +153,18 @@ ul.footer-block li a:hover {
   display: flex;
   padding: 0.5rem;
 }
+
+.footer__copyright {
+  text-align: center;
+  color: white;
+  margin-top: 1rem;
+}
+
+.footer__copyright a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__copyright a:hover {
+  text-decoration: underline;
+}
