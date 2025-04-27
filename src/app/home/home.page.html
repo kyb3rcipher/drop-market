@@ -1,27 +1,62 @@
-<ion-menu side="start" menuId="first" contentId="main-content">
-  <ion-header>
+<ion-menu side="start" menuId="first" contentId="main-content" type="overlay" class="fullscreen-menu">
+  <!--<ion-header>
     <ion-toolbar color="light">
       <ion-title>Menú</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header>-->
 
   <ion-content>
-    <ion-list>
-      <ion-item button routerLink="/home">Caps</ion-item>
-      <ion-item button routerLink="/about">Labubu</ion-item>
-      <ion-item button routerLink="/contact">Rifa</ion-item>m>
-    </ion-list>
+    <nav class="menu-navigation">
+      <ul class="list-menu">
+        <li><a href="#" class="menu-item list-menu-item">Caps</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Labubu</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Rifa</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Snkrs</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Mistery box</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Fragance</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Watches</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Merch</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Hieleras</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Ropa</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Memorabilia DEPORTIVA</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-links">
+      <a href="/login" class="menu-account"><ion-icon name="person-outline" class="icon icon-account"></ion-icon>Iniciar sesion</a>
+      
+      <ul class="list list-social list-unstyled">
+        <li class="item">
+          <a href="https://twitter.com/#" class="list-social-link">
+            <ion-icon name="logo-twitter" class="icon"></ion-icon>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+        </li>
+        <li class="list-social-item">
+          <a href="https://www.instagram.com/#" class="list-social-link">
+            <ion-icon name="logo-instagram" class="icon"></ion-icon>
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+        <li class="list-social-item">
+          <a href="https://www.tiktok.com/@#" class="list-social-link">
+            <ion-icon name="logo-tiktok" class="icon"></ion-icon>
+            <span class="visually-hidden">TikTok</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </ion-content>
 </ion-menu>
 
 <ion-header [translucent]="true">
-  <ion-toolbar color="light">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
     <ion-title class="ion-text-center">
-      <img src="/assets/logo.png" alt="Drop-Market logo" />
+      <img src="/assets/logo.png" width="200" height="60" alt="Drop-Market logo" />
     </ion-title>
 
     <ion-buttons slot="end">
@@ -93,31 +128,31 @@
     <div>
       <h2>ACCESOS RAPIDOS</h2>
       <ul class="footer-block">
-        <li><a href="#">CAPS</a></li>
-        <li><a href="#">LABUBU</a></li>
-        <li><a href="#">SNKRS</a></li>
-        <li><a href="#">MISTERY BOX</a></li>
-        <li><a href="#">FRAGANCE</a></li>
-        <li><a href="#">WATCHES</a></li>
-        <li><a href="#">MERCH</a></li>
-        <li><a href="#">HIELERAS</a></li>
-        <li><a href="#">ROPA</a></li>
-        <li><a href="#">MEMORABILIA DEPORTIVA</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">CAPS</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">LABUBU</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">SNKRS</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">MISTERY BOX</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">FRAGANCE</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">WATCHES</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">MERCH</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">HIELERAS</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">ROPA</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">MEMORABILIA DEPORTIVA</a></li>
       </ul>
     </div>
 
     <div>
       <h2>CENTRO DE AYUDA</h2>
       <ul class="footer-block">
-        <li><a href="#">Terminos y condiciones</a></li>
-        <li><a href="#">Preguntas frecuentes</a></li>
-        <li><a href="#">Aviso de Privacidad</a></li>
-        <li><a href="#">Metodos de Pago</a></li>
-        <li><a href="#">Metodos de Entrega</a></li>
-        <li><a href="#">Cambios y devoluciones</a></li>
-        <li><a href="#">Guia de tallas</a></li>
-        <li><a href="#">Terminos de servicio</a></li>
-        <li><a href="#">Politica de reembolso</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Terminos y condiciones</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Preguntas frecuentes</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Aviso de Privacidad</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Metodos de Pago</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Metodos de Entrega</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Cambios y devoluciones</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Guia de tallas</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Terminos de servicio</a></li>
+        <li><a id="HeaderDrawer-labubu" href="#">Politica de reembolso</a></li>
       </ul>
     </div>
 
@@ -144,8 +179,8 @@
 
       <div class="footer__copyright caption">
           <small class="copyright__content">
-            ©2025 <a href="#">DROP-SHOP</a> <br>
-            Created by: <a href="https://kyb3rcipher.com">KYB3R CIPHER ★</a>
+            ©2025 <a href="#" >DROP-SHOP</a> <br>
+            Created by: <a href="https://kyb3rcipher.com"><strong>KYB3R CIPHER ★</strong></a>
           </small>
       </div>
     </div>
