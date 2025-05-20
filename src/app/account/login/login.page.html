@@ -1,16 +1,66 @@
+<ion-menu side="start" menuId="first" contentId="main-content" type="overlay" class="fullscreen-menu">
+  <ion-content>
+    <nav class="menu-navigation">
+      <ul class="list-menu">
+        <li><a href="#" class="menu-item list-menu-item">Caps</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Labubu</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Rifa</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Snkrs</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Mistery box</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Fragance</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Watches</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Merch</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Hieleras</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Ropa</a></li>
+        <li><a href="#" class="menu-item list-menu-item">Memorabilia DEPORTIVA</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-links">
+      <a href="/login" class="menu-account"><ion-icon name="person-outline" class="icon icon-account"></ion-icon>Iniciar sesion</a>
+      
+      <ul class="list list-social list-unstyled">
+        <li class="item">
+          <a href="https://twitter.com/#" class="list-social-link">
+            <ion-icon name="logo-twitter" class="icon"></ion-icon>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+        </li>
+        <li class="list-social-item">
+          <a href="https://www.instagram.com/#" class="list-social-link">
+            <ion-icon name="logo-instagram" class="icon"></ion-icon>
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+        <li class="list-social-item">
+          <a href="https://www.tiktok.com/@#" class="list-social-link">
+            <ion-icon name="logo-tiktok" class="icon"></ion-icon>
+            <span class="visually-hidden">TikTok</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-menu>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <img src="/assets/logo.png" width="200" height="60" alt="Drop-Market logo" />
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="search-outline"></ion-icon></ion-button>
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content id="main-content" [fullscreen]="true">
   <div class="login-container">
     <h1>Inicio de sesion</h1>
     
