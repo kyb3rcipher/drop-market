@@ -2,14 +2,22 @@
 
 <ion-content id="main-content" [fullscreen]="true">
 <main>
-  <div *ngFor="let product of products">
-    <ion-card>
-      <img [src]="product.image" />
-      <ion-card-content>    
-        <h2>{{ product.title }}</h2>
-        <p>$ {{ product.price }} MXN</p>
-      </ion-card-content>
-    </ion-card>
+  <div class="top-bar">
+    <ion-button fill="clear" size="small" class="filter-button"><ion-icon name="funnel-outline" slot="start"></ion-icon>Filtrar y ordenar</ion-button>
+    <div class="product-count">{{ products.length }} productos</div>
+  </div>
+  
+  
+  <div class="products">
+    <div *ngFor="let product of products">
+      <ion-card>
+        <img [src]="product.image" />
+        <ion-card-content>    
+          <h2>{{ product.title }}</h2>
+          <p>$ {{ product.price }} MXN</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </main>
 
