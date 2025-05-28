@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+<main>
+  <div *ngFor="let product of products">
+    <ion-card>
+      <img [src]="product.image" />
+      <ion-card-content>    
+        <h2>{{ product.title }}</h2>
+        <p>$ {{ product.price }} MXN</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</main>
+
+<app-footer></app-footer>
+</ion-content>

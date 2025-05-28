@@ -1,0 +1,43 @@
+main {
+    padding: 27px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+}
+  
+main > div {
+    flex: 0 0 calc(50% - 16px);
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+ion-card {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    color: #4D595D;
+}
+
+ion-card img {
+    /* Puedes ajustar la altura si quieres */
+    /* height: 180px; */
+    width: 100%;
+    object-fit: cover;
+}
+
+ion-card ion-card-content {
+    padding: 0;
+    margin-top: 10px;
+}
+
+ion-card ion-card-content h2 {
+    font-size: 10.4px;
+    font-weight: 450;
+}
+
+ion-card ion-card-content p {
+    font-size: 80%;
+    font-weight: 400;
+}
