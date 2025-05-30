@@ -1,3 +1,15 @@
+ion-card {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  color: #4D595D;
+}
+ion-card ion-card-content {
+  padding: 0;
+  margin-top: 15px;
+}
+
 // Content styles
 swiper-container {
   height: 60vh;
@@ -56,4 +68,79 @@ swiper-container {
 }
 .button-primary:hover {
   padding: 11px 21px;
+}
+
+.top-sales {
+  padding: 0 15px;
+}
+
+.top-sales h2 {
+  margin: 30px 0 20px;
+  font-size: 30px;
+}
+
+.card-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-card {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+swiper-container {
+  height: auto;
+}
+
+.card-button {
+  padding: 15px 0;
+}
+
+.card-button div {
+  text-align: center;
+  background-color: #F2F2F2;
+  padding: 0 30px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.card-button h2 {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.card-button p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 28.8px;
+  color: rgba(18,18,18, 0.75);
+  margin-bottom: 20px;
+}
+
+.top-sales ion-card ion-card-header img {
+  height: 165px;
+  width: 165px;
+}
+
+.top-sales ion-card ion-card-content ion-card-title {
+  font-size: 10.26px;
+  font-weight: normal;
+  margin-bottom: 13px;
+}
+
+.top-sales ion-card ion-card-content ion-card-title a {
+  color: black;
+  text-decoration: none;
+}
+.top-sales ion-card ion-card-content .price p {
+  color: black;
+  font-size: 13px;
 }

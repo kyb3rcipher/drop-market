@@ -57,5 +57,38 @@
     </swiper-slide>
   </swiper-container>
 
+
+  <section class="top-sales">
+    <h2><strong>TOP SALES</strong></h2>
+
+    <swiper-container pagination="true" autoplay-delay="2000" space-between="10">
+      <swiper-slide>
+        <div class="card-row">
+          <ion-card *ngFor="let product of topSales" class="slide-card">
+            <ion-card-header>
+              <img [src]="product.image" />
+            </ion-card-header>
+            <ion-card-content>
+              <ion-card-title>
+                <a [routerLink]="[product.link]">{{ product.title }}</a>
+              </ion-card-title>
+              <div class="price">
+                <p class="regular-price">{{ product.price }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+    </swiper-slide>
+  </swiper-container>
+
+    <div class="card-button">
+      <div>
+        <h2><strong>ATENCION PERSONALIZADA</strong></h2>
+        <p>Queremos ayudarte a encontrar los <em>Sneakers</em> de tus suenos</p>
+        <ion-button class="button-outline">CONTACTANOS AHORA!</ion-button>
+      </div>
+    </div>
+  </section>
+
 <app-footer></app-footer>
 </ion-content>
