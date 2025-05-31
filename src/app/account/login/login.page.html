@@ -14,8 +14,8 @@
     </div>
 
     <form (submit)="login(); $event.preventDefault();">
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Email"></ion-input>
-      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Contrasena"></ion-input>
+      <ion-item><ion-input [(ngModel)]="email" name="email" type="email" placeholder="Email"></ion-input></ion-item>
+      <ion-item><ion-input [(ngModel)]="password" name="password" type="password" placeholder="Contrasena" style="margin-bottom: 10px;"></ion-input></ion-item>
       <a id="forgot-password">Olvidaste tu contrasena?</a>
     
       <div id="form-footer">
