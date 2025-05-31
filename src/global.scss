@@ -61,9 +61,10 @@ ion-button.button-outline {
   --box-shadow: none;
   --border-radius: 0;
 
-  padding: 0 30px;
-  min-width: 122px;
-  min-height: 47px;
+  padding: 0.4em 1em;
+  min-width: auto;
+  min-height: auto;
+  width: auto;
 }
 ion-button.button-outline:hover {
   border-width: 3px;

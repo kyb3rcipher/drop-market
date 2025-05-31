@@ -58,6 +58,7 @@
   </swiper-container>
 
 
+<main>
   <section class="top-sales">
     <h2><strong>TOP SALES</strong></h2>
 
@@ -89,6 +90,148 @@
       </div>
     </div>
   </section>
+
+  <section class="marcas-populares">
+    <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 30px;"><strong>MARCAS + POPULARES</strong></h2>
+    <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 30px;"><strong>SNKRS</strong></h2>
+
+    <swiper-container slides-per-view="auto" space-between="1" pagination="false" autoplay-delay="2000">
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_AIR_JORDAN.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_ADIDAS.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_NIKE_SB.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_OFF_WHITE.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_NIKE.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card class="collection-card">
+            <div class="image-container">
+              <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_SUPREME.png">
+            </div>
+          </ion-card>
+        </swiper-slide>
+    </swiper-container>
+  </section>
+
+  <section id="caps">
+    <h2><strong>CAPS</strong></h2>
+
+    <swiper-container pagination="true" autoplay-delay="2000" space-between="10">
+      <swiper-slide>
+        <div class="card-row">
+          <ion-card *ngFor="let product of topSales" class="slide-card">
+            <ion-card-header>
+              <img [src]="product.image" />
+            </ion-card-header>
+            <ion-card-content>
+              <ion-card-title>
+                <a [routerLink]="[product.link]">{{ product.title }}</a>
+              </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+    <div class="card-button">
+      <div>
+        <h2><strong>CLICK & COLLECT</strong></h2>
+        <p>Compra en linea y recoge en nuestra tienda fisica en Star City.</p>
+        <ion-button class="button-outline">VER UBICACION</ion-button>
+      </div>
+    </div>
+  </section>
+
+  <section id="top-buscado">
+    <h2 style="font-size: 27px;"><strong>TOP + BUSCADO</strong></h2>
+
+    <swiper-container pagination="true" autoplay-delay="2000" space-between="10">
+      <swiper-slide>
+        <div class="card-row">
+          <ion-card *ngFor="let product of topSales" class="slide-card">
+            <ion-card-header>
+              <img [src]="product.image" />
+            </ion-card-header>
+            <ion-card-content>
+              <ion-card-title>
+                <a [routerLink]="[product.link]">{{ product.title }}</a>
+              </ion-card-title>
+              <div class="price">
+                <p class="regular-price">{{ product.price }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </section>
+
+  <section id="descubre">
+    <h2 style="font-size: 30px;"><strong>DESCUBRE</strong></h2>
+
+    <ion-card class="image-card">
+        <img src="https://drop-shop.mx/cdn/shop/collections/DS_-_ALL_JEFF_HAMILTON.png">
+        <h3><a routerLink="/collections/ds-all-jeff-hamilton" class="card-link">Ver productos <ion-icon name="arrow-forward-outline"></ion-icon></a></h3>
+    </ion-card>
+  </section>
+
+  <section id="grid-products">
+    <h2 style="font-size: 30px;"><strong>FASHION & ACCESORIES</strong></h2>
+
+    <div class="products">
+      <div *ngFor="let product of products | slice:0:10"> <!-- Max 10 product card -->
+        <ion-card>
+          <img [src]="product.image" />
+          <ion-card-content>    
+            <h2>{{ product.title }}</h2>
+            <p>$ {{ product.price }} MXN</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    
+    <div id="button-wrapper"><ion-button class="button-outline">Ver todo</ion-button></div>      
+  </section>
+
+  <section id="ofertas">
+    <h2 style="font-size: 17px;"><strong>OFERTAS</strong></h2>
+    <img src="https://drop-shop.mx/cdn/shop/collections/outlet_da252fca-8b0c-45e1-8c4c-0b0fdf3d190e.png">
+  </section>
+</main>
+
 
 <app-footer></app-footer>
 </ion-content>
