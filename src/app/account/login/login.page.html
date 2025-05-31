@@ -4,13 +4,24 @@
   <div class="login-container">
     <h1>Inicio de sesion</h1>
     
-    <form>
-      <ion-input type="email" autocapitalize="off" placeholder="Correo electronico"></ion-input>
-      <ion-input type="password" autocapitalize="off" placeholder="Contrasena"></ion-input>
-      <a>Olvidaste tu contrasena?</a>
+    <div id="alerts">
+      <h2><ion-icon name="alert-circle"></ion-icon> Por favor, ajusta lo siguiente:</h2>
+      <ul>
+        <li id="incorrect-data">Email o contrasena incorrectos.</li>
+        <li id="email-missing">Email incompleto.</li>
+        <li id="password-missing">Contrasena incompleto.</li>
+      </ul>
+    </div>
 
-      <ion-button type="submit">Iniciar sesion</ion-button>
-      <a>Crear cuenta</a>
+    <form (submit)="login(); $event.preventDefault();">
+      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Email"></ion-input>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Contrasena"></ion-input>
+      <a id="forgot-password">Olvidaste tu contrasena?</a>
+    
+      <div id="form-footer">
+        <ion-button type="submit">Iniciar sesion</ion-button>
+        <a>Crear cuenta</a>
+      </div>
     </form>
   </div>
 

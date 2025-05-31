@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,6 +18,9 @@ import { SharedModule } from '../../shared/shared.module';
     LoginPageRoutingModule,
     SharedModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi())
+  ]
 })
 export class LoginPageModule {}
