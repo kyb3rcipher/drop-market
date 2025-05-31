@@ -70,7 +70,10 @@ ion-button.button-outline:hover {
   border-width: 3px;
 }
 
-ion-input {
+.custom-input {
+  position: relative;
+}
+.custom-input ion-input {
   --background: transparent;
   --border: none;
   --box-shadow: none;
@@ -85,7 +88,40 @@ ion-input {
   line-height: 28.8px;
   width: 100%;
 }
-ion-input:focus-within {
+.custom-input ion-input:focus-within {
   border-width: 2px;
   border-color: black;
+}
+
+/* Label base */
+.custom-input label.floating-label {
+  font-size: 16px;
+  left: 20px;
+  top: 10px;
+  margin-bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: top 0.1s ease, font-size 0.1s ease;
+  color: rgba(18,18,18, 0.75);
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/* When ion-item (input-wrapper) is focus */
+/* When is focus or not it's empty (class filled) */
+.custom-input:focus-within label.floating-label,
+.custom-input.filled label.floating-label {
+  top: 5px;
+  left: 16px;
+  font-size: 12px;
+}
+/* Whhen not it's focus and is empty (without clase filled) */
+.custom-input label.floating-label {
+  top: 10px;
+  left: 20px;
+  font-size: 16px;
+}
+
+.custom-input ion-input {
+  --padding-top: 13px;
 }

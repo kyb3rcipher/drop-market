@@ -74,6 +74,11 @@ form ion-button {
   min-height: 47px;  /* 45px + 2px */
 }
 
+ion-label {
+  --padding-start: 15px !important;
+  --padding-end: 15px !important;
+}
+
 ion-item {  // Reset
   --padding-start: 0;
   --inner-padding-end: 0;
