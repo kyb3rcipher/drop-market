@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { notAuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,15 +14,18 @@ const routes: Routes = [
   },
   {
     path: 'account/login',
-    loadChildren: () => import('./account/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./account/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [notAuthGuard]
   },
   {
     path: 'account/register',
-    loadChildren: () => import('./account/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./account/register/register.module').then( m => m.RegisterPageModule),
+    canActivate: [notAuthGuard]
   },
   {
     path: 'account/forgot-password',
-    loadChildren: () => import('./account/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./account/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
+    canActivate: [notAuthGuard]
   },
   {
     path: 'products',
