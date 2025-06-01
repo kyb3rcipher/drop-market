@@ -1,0 +1,212 @@
+main {
+    padding: 27px 15px;
+  }
+  
+  h1 {
+    font-size: 22.5px;
+    font-weight: 400;
+    line-height: 29.25px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+  }
+  
+  p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+  
+  a {
+    color: #333333;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+  }
+  
+  #guia-tallas {
+    margin: 35px 0;
+  
+    a {
+      color: black;
+    }
+  }
+  
+  .tallas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #tallas-title {
+    color: #4B4B4B;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .custom-radio {
+    letter-spacing: 1px;
+    font-size: 14px;
+    border-radius: 45px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  input[type="radio"]:checked + .custom-radio {
+    background-color: black;
+    color: white;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  
+    ion-input.quantity-input {
+      width: 60px;
+      text-align: center;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+  
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+    }
+  
+    ion-icon {
+      color: black;
+      font-size: 18px;
+    }
+  }
+  
+  ion-item.quantity {
+    height: 45px;
+    width: 142px;
+    min-height: 45px;
+    border: 1px solid black;
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
+  .paypal-btn {
+    margin: 15px 0;
+    --background: #ffc439;
+    --color: #000;
+    --border-radius: 0;
+    --border: none;
+    --box-shadow: none;
+    display: flex;
+    text-transform: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 45px;
+  }
+  
+  .paypal-logo {
+    margin-left: 5px;
+    height: 24px;
+  }
+  
+  .paypal-text {
+    font-weight: 450;
+  }
+  
+  #pago {
+    text-align: center;
+    margin-bottom: 25px;
+  
+    ion-button {
+      width: 100%;
+    }
+  
+    a {
+      font-size: 12px;
+      font-weight: 450;
+      margin: 30px 0;
+      line-height: 18px;
+    }
+  }
+  
+  #description {
+    font-size: 15px;
+    line-height: 27px;
+    font-weight: 400;
+    color: #4B4B4B;
+  }
+  
+  #podria-interesarte {
+    padding: 27px 15px;
+  
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+    }
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  
+    > div {
+      flex: 0 0 calc(50% - 16px);
+      box-sizing: border-box;
+      margin-bottom: 5px;
+    }
+  }
+  
+  ion-card {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    ion-card-content {
+      color: black;
+      padding: 0;
+      margin-top: 10px;
+  
+      h2 {
+        font-size: 10.5px;
+        font-weight: 400;
+      }
+  
+      p {
+        font-size: 11px;
+      }
+
+      h2#product-title {
+        font-size: 10.2px;
+        font-weight: 400;
+        line-height: 13.26px;
+      }
+    }
+  }
+  
