@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Storage } from '@ionic/storage-angular';
 import { ToastController } from '@ionic/angular';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -16,10 +16,13 @@ export class LoginPage implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private storage: Storage
   ) {}
 
-  ngOnInit() {}
+  async ngOnInit() {
+    await this.storage.create();
+  }
 
   async login() {
     const alerts = document.getElementById('alerts');
@@ -54,6 +57,7 @@ export class LoginPage implements OnInit {
       next: async (res) => {
         if (res.success) {
           alerts?.classList.remove('show');
+          await this.storage.set('userData', { email: this.email });
           await this.presentToast('Login exitoso');
         } else {
           alerts?.classList.add('show');
