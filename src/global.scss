@@ -44,6 +44,38 @@
   box-sizing: border-box;
 }
 
+p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 28.8px;
+  color: rgba(18,18,18, 0.75);
+  margin-bottom: 20px;
+}
+
+a {
+  // display: block;
+  margin: 0;
+  width: fit-content;
+  color: #333333;
+  text-decoration: underline;
+  // text-underline-offset: 0.3rem;
+}
+
+.button-custom {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  background: black;
+  --background: black;
+  --box-shadow: none;
+  --border-radius: 0;
+  margin: 0 0 1.5rem;
+  text-transform: none;
+  letter-spacing: 0.1rem;
+  padding: 0 30px;
+  min-width: 122px;  /* 120px + 2px */
+  min-height: 47px;  /* 45px + 2px */
+}
 
 ion-button.button-outline {
   font-size: 15px;

@@ -1,0 +1,243 @@
+/*main {
+    text-align: center;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+h1 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 0.6px;
+    margin-top: 45px;
+}
+
+ion-button {
+    margin-top: 30px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}*/
+
+
+main {
+    padding: 27px 15px;
+}
+  
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+  
+    h1 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 39px;
+    }
+}
+  
+table {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+thead {
+    border-bottom: 1px solid #CFCFCF;
+}
+  
+th {
+    color: #121212B3;
+    font-size: 10px;
+    padding-bottom: 18px;
+    opacity: 0.85;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    line-height: 12px;
+}
+  
+.cart-item {
+    td {
+      padding: 1rem 0;
+      vertical-align: top;
+    }
+  
+    td.product-price {
+      p {
+        color: black;
+      }
+    }
+}
+  
+.product-info {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  
+    .product-details {
+      a {
+        color: black;
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: none;
+        max-width: 300px;
+        word-break: break-word;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      p {
+        margin-top: 6px;
+        font-size: 14px;
+        letter-spacing: 0.6px;
+        line-height: 21px;
+      }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 35px;
+
+        .quantity {
+            /* Reset variables de Ionic */
+            --inner-padding-end: 0;
+            --inner-padding-start: 0;
+            --padding-start: 0;
+            --padding-end: 0;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // margin-bottom: 30px;
+            height: 45px;
+            width: 142px;
+            min-height: 45px;
+            border: 1px solid black;
+        
+            ion-input.quantity-input {
+              width: 60px;
+              text-align: center;
+              --padding-start: 0;
+              --padding-end: 0;
+            }
+        
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: transparent;
+              width: 36px;
+              height: 36px;
+              padding: 0;
+              border: none;
+              cursor: pointer;
+            }
+        
+            ion-icon {
+              color: black;
+              font-size: 18px;
+            }
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            width: 36px;
+            height: 45px;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+        }
+        
+      
+        ion-icon {
+            color: black;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        
+            &:hover {
+              color: #e74c3c;
+            }
+        }
+    }
+}
+
+.product-info img {
+    width: 120px;
+    height: 178px;
+    object-fit: cover;
+    border: 0.1px solid #ccc;
+}
+
+.cart-footer {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+    
+
+    h2 {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        line-height: 16px;
+        
+        #total-price {
+            color: #121212bf;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.6px;
+            line-height: 18px;
+        }
+    }
+
+    p {
+        color: #121212bf;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        line-height: 19.5px;
+        margin-top: 22px;
+        margin-bottom: 16px;
+    }
+
+    ion-button {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .paypal-btn {
+        --background: #ffc439;
+        --color: #000;
+        --border-radius: 0;
+        --border: none;
+        --box-shadow: none;
+        text-transform: none;
+        gap: 8px;
+        height: 45px;
+        margin-bottom: 0;
+    }
+      
+    .paypal-logo {
+        margin-left: 5px;
+        height: 24px;
+    }
+      
+    .paypal-text {
+        font-weight: 450;
+    }
+}
