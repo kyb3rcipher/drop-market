@@ -3,16 +3,9 @@
     <div>
       <h2>ACCESOS RAPIDOS</h2>
       <ul class="footer-block">
-        <li><a id="HeaderDrawer-labubu" href="#">CAPS</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">LABUBU</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">SNKRS</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">MISTERY BOX</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">FRAGANCE</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">WATCHES</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">MERCH</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">HIELERAS</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">ROPA</a></li>
-        <li><a id="HeaderDrawer-labubu" href="#">MEMORABILIA DEPORTIVA</a></li>
+        <li *ngFor="let category of categories">
+          <a href="/category/{{ category.name }}">{{ category.name }}</a>
+        </li>
       </ul>
     </div>
 

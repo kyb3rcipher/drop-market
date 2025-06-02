@@ -2,17 +2,9 @@
   <ion-content>
     <nav class="menu-navigation">
       <ul class="list-menu">
-        <li><a href="#" class="menu-item list-menu-item">Caps</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Labubu</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Rifa</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Snkrs</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Mistery box</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Fragance</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Watches</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Merch</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Hieleras</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Ropa</a></li>
-        <li><a href="#" class="menu-item list-menu-item">Memorabilia DEPORTIVA</a></li>
+        <li *ngFor="let category of categories">
+          <a href="/category/{{ category.name }}" class="menu-item list-menu-item">{{ category.name }}</a>
+        </li>
       </ul>
     </nav>
 
