@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { ToastController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-products',
@@ -8,36 +12,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsPage implements OnInit {
 
-  products = [
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/s-l1600_db107192-7113-4af4-b484-1b616fd55c9e.webp?v=1730748842',
-      title: 'Labubu "The monsters" Exciting Macaron',
-      price: '1,200'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "The monsters" Have a Seat',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-  ];
+  quantity: number = 1;
+  size: any = '';
 
-  constructor() { }
+  brandName: string | null = null;
+  products: any[] = [];
+
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private toastController: ToastController
+  ) {}
 
   ngOnInit() {
+    this.brandName = this.route.snapshot.paramMap.get('brandName');
+
+    if (this.brandName) {
+      this.loadProductsByBrand(this.brandName);
+    }
+  }
+
+  loadProductsByBrand(brandName: string) {
+    this.http.post<any>(`${environment.apiUrl}/getProductsByBrand.php`, { brandName }).subscribe({
+      next: (res) => {
+        if (res.success) {
+          this.products = res.products;
+          console.log('Productos obtenidos:', res.products);
+        } else {
+          this.presentToast(res.message || 'No se encontraron productos');
+        }
+      },
+      error: () => {
+        this.presentToast('Error al obtener productos');
+      }
+    });
+  }
+
+  increaseQuantity() {
+    this.quantity++;
+  }
+
+  decreaseQuantity() {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
+  private async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'bottom',
+    });
+    await toast.present();
   }
 }
