@@ -9,8 +9,8 @@
   
   <div class="products">
     <div *ngFor="let product of products">
-      <ion-card>
-        <img [src]="product.image || 'https://drop-shop.mx/cdn/shop/files/s-l1600_60d41edf-04d8-4a26-883d-b003cb9e0490.webp'" />
+      <ion-card (click)="goToProductDetail(product.id)" style="cursor: pointer;">
+        <img src="http://127.0.0.1:8000/{{ product.image }}" />
         <ion-card-content>
           <h2>{{ product.name }}</h2>
           <p>$ {{ product.price }} MXN</p>

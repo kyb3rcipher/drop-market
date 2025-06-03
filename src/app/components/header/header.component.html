@@ -4,7 +4,7 @@
       <ul class="list-menu" id="mainMenu">
         <li *ngFor="let category of categories">
           <ng-container *ngIf="category.brands.length === 1; else submenuBtn">
-            <a [href]="'/category/' + category.name" class="menu-item list-menu-item">{{ category.name }}</a>
+            <a [href]="'/products/' + category.name" class="menu-item list-menu-item">{{ category.name }}</a>
           </ng-container>
           <ng-template #submenuBtn>
             <a class="menu-item list-menu-item menu-item--with-icon-end" (click)="showSubmenu(category)">{{ category.name }} <ion-icon name="arrow-forward-outline"></ion-icon></a>
@@ -20,7 +20,7 @@
       
       <ul class="list-menu" id="submenu" hidden>
         <li><a class="menu-item list-menu-item" (click)="showMainMenu()"><ion-icon name="arrow-back-outline"></ion-icon> {{ currentCategoryName }}</a></li>
-        <li *ngFor="let brand of currentSubmenuBrands"><a [href]="'/collections/' + formatSlug(brand.name)" class="menu-item list-menu-item">{{ brand.name }}</a></li>
+        <li *ngFor="let brand of currentSubmenuBrands"><a [href]="'/products/' + formatSlug(brand.name)" class="menu-item list-menu-item">{{ brand.name }}</a></li>
       </ul>
 
       <ul class="list-menu" id="adminSubmenu" hidden>

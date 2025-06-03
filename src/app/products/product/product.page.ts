@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -10,67 +14,68 @@ export class ProductPage implements OnInit {
 
   quantity: number = 1;
   size: any = '';
-  
-  products = [
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/s-l1600_db107192-7113-4af4-b484-1b616fd55c9e.webp?v=1730748842',
-      title: 'Labubu "The monsters" Exciting Macaron',
-      price: '1,200'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "The monsters" Have a Seat',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-    {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    }, {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    }, {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    }, {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    }, {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    }, {
-      image: 'https://drop-shop.mx/cdn/shop/files/image_67_48f5bae1-afc1-4563-9159-1ca06c211cd1.webp',
-      title: 'Labubu "Fall in wild"',
-      price: '999'
-    },
-  ];
-  
-  constructor() { }
 
-  ngOnInit() {}
+  products: any[] = [];
+
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      if (id) {
+        this.loadProductById(id);
+      } 
+      this.loadProducts();
+    });
+  }
+
+  loadProducts() {
+    this.http.get<any>(`${environment.apiUrl}/getProducts.php`).subscribe({
+      next: (res) => {
+        if (res.success) {
+          this.products = res.products;
+        } else {
+          this.products = [];
+          console.warn('No se encontraron productos');
+        }
+      },
+      error: (err) => {
+        console.error('Error cargando productos', err);
+      }
+    });
+  }
+
+  product: any = null;
+
+loadProductById(id: number) {
+  this.http.get<any>(`${environment.apiUrl}/getProduct.php?id=${id}`).subscribe({
+    next: (res) => {
+      if (res.success) {
+        this.product = res.product;
+        console.log(this.product);
+      } else {
+        this.product = null;
+        console.warn('Producto no encontrado');
+      }
+    },
+    error: (err) => {
+      console.error('Error cargando producto', err);
+    }
+  });
+}
+
 
   increaseQuantity() {
     this.quantity++;
   }
-  
+
   decreaseQuantity() {
-    if (this.quantity > 1) {
-      this.quantity--;
-    }
+    if (this.quantity > 1) this.quantity--;
+  }
+
+
+  goToProductDetail(id: number) {
+    this.router.navigate(['/products/product', id]);
   }
 
 }

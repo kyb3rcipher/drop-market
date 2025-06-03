@@ -13,10 +13,10 @@
       <ion-item>
         <ion-label>Imagen</ion-label>
         <input type="file" (change)="onFileSelected($event)" />
-      </ion-item>      
+      </ion-item>
 
       <ion-item *ngIf="product.image">
-        <img [src]="product.image" alt="Imagen actual" style="max-height: 150px; max-width: 100%;" />
+        <img src="http://127.0.0.1:8000/{{product.image}}" alt="Imagen actual" style="max-height: 150px; max-width: 100%;" />
       </ion-item>
 
       <ion-item class="custom-input" [class.filled]="product.price != null && product.price.toString().length > 0">

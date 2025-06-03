@@ -2,10 +2,10 @@
 
 <ion-content id="main-content" [fullscreen]="true">
 <main>
-  <img src="https://drop-shop.mx/cdn/shop/files/WhatsAppImage2025-03-13at4.05.00PM.jpg">
+  <img src="http://127.0.0.1:8000/{{ product?.image }}">
 
-  <h1>Participa y Gana Cartier Santos 2024 BOLETOS 101-150</h1>
-  <h3>$ 1,300.00</h3>
+  <h1>{{ product?.name }}</h1>
+  <h3>{{ product?.price }}</h3>
 
   <p>Los <a>gastos de envío</a> se calculan en la pantalla de pago.</p>
   
@@ -36,13 +36,7 @@
   </div>
   
   <p id="description">
-    -La Rifa será realizada en el momento que se vendan todos los boletos. <br>
-
-    -La participacion es con tu nombre completo registrado en el numero que selecciones. Este numero se jugara en una lista aleatoria de la cual se seleccionaran 20 finalista y se definira al ganador en una ruleta aleatoria. <br>
-
-    -El ganador de la rifa, podrá escoger entre 1 Reloj "Cartier Santos 2024 Full Set en Color Negro, Verde o Azul". <br>
-
-    -El articulo sera entregado en un lapso de 1-20 días hábiles.
+    {{ product?.description }}
   </p>
 </main>
 
@@ -51,8 +45,8 @@
 
   <div class="products">
     <div *ngFor="let product of products | slice:0:4"> <!-- Max 4 product card -->
-      <ion-card>
-        <img [src]="product.image" />
+      <ion-card (click)="goToProductDetail(product.id)" style="cursor: pointer;">
+        <img src="http://127.0.0.1:8000/{{product.image}}" />
         <ion-card-content>
           <h2 id="product-title">{{ product.title }}</h2>
           <p>$ {{ product.price }}</p>

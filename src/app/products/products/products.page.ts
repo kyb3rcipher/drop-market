@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +22,8 @@ export class ProductsPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -65,5 +67,9 @@ export class ProductsPage implements OnInit {
       position: 'bottom',
     });
     await toast.present();
+  }
+
+  goToProductDetail(id: number) {
+    this.router.navigate(['/products/product', id]);
   }
 }
