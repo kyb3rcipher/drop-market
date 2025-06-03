@@ -1,10 +1,20 @@
 <ion-menu side="start" menuId="first" contentId="main-content" type="overlay" class="fullscreen-menu">
   <ion-content>
     <nav class="menu-navigation">
-      <ul class="list-menu">
+      <ul class="list-menu" id="mainMenu">
         <li *ngFor="let category of categories">
-          <a href="/category/{{ category.name }}" class="menu-item list-menu-item">{{ category.name }}</a>
+          <ng-container *ngIf="category.brands.length === 1; else submenuBtn">
+            <a [href]="'/category/' + category.name" class="menu-item list-menu-item">{{ category.name }}</a>
+          </ng-container>
+          <ng-template #submenuBtn>
+            <a class="menu-item list-menu-item menu-item--with-icon-end" (click)="showSubmenu(category)">{{ category.name }} <ion-icon name="arrow-forward-outline"></ion-icon></a>
+          </ng-template>
         </li>
+      </ul>      
+      
+      <ul class="list-menu" id="submenu" hidden>
+        <li><a class="menu-item list-menu-item" (click)="showMainMenu()"><ion-icon name="arrow-back-outline"></ion-icon> {{ currentCategoryName }}</a></li>
+        <li *ngFor="let brand of currentSubmenuBrands"><a [href]="'/collections/' + formatSlug(brand.name)" class="menu-item list-menu-item">{{ brand.name }}</a></li>
       </ul>
     </nav>
 

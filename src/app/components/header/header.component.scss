@@ -30,6 +30,13 @@ ion-header ion-toolbar {
   font-size: 1.8rem;
 }
 
+.menu-item--with-icon-end {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .list-menu-item {
   font-size: 18px !important;
   color: black;
