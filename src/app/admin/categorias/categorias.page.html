@@ -15,13 +15,19 @@
           <td><p>{{ i + 1 }}</p></td>
           <td>{{ category.name }}</td>
           <td style="width: 1%; white-space: nowrap;">
-            <ion-button><ion-icon name="pencil-outline"></ion-icon></ion-button>
+            <ion-button (click)="editCategory(category)"><ion-icon name="pencil-outline"></ion-icon></ion-button>
             <ion-button (click)="deleteCategory(category.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
           </td>
         </tr>      
     </tbody>
 </table>
 </main>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addCategory()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
 
 <app-footer></app-footer>

@@ -32,6 +32,112 @@ export class CategoriasPage implements OnInit {
     });
   }
 
+  async addCategory() {
+    const alert = await this.alertCtrl.create({
+      header: 'Agregar Categoria',
+      inputs: [
+        {
+          name: 'name',
+          type: 'text',
+          placeholder: 'Nombre de la categoría',
+        }
+      ],
+      buttons: [
+        { text: 'Cancelar', role: 'cancel' },
+        {
+          text: 'Guardar',
+          handler: (data) => {
+            const newName = data.name.trim();
+            if (!newName) return;
+  
+            this.http.post<any>(`${environment.apiUrl}/addCategory.php`, { name: newName })
+              .subscribe({
+                next: async (res) => {
+                  if (res.success && res.id) {
+                    this.categories.push({ id: res.id, name: newName });
+                    const toast = await this.toastCtrl.create({
+                      message: `Categoría creada con ID: ${res.id}`,
+                      duration: 2500,
+                      color: 'success',
+                    });
+                    toast.present();
+                  } else {
+                    const toast = await this.toastCtrl.create({
+                      message: 'Error al crear la categoría.',
+                      duration: 2000,
+                      color: 'danger',
+                    });
+                    toast.present();
+                  }
+                },
+                error: async () => {
+                  const toast = await this.toastCtrl.create({
+                    message: 'Error al crear la categoría.',
+                    duration: 2000,
+                    color: 'danger',
+                  });
+                  toast.present();
+                }
+              });
+          }
+        }
+      ]
+    });
+  
+    await alert.present();
+  }  
+  
+  async editCategory(category: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Editar Categoria',
+      inputs: [
+        {
+          name: 'name',
+          type: 'text',
+          placeholder: 'Nuevo nombre',
+          value: category.name
+        }
+      ],
+      buttons: [
+        { text: 'Cancelar', role: 'cancel' },
+        {
+          text: 'Guardar',
+          handler: (data) => {
+            const newName = data.name.trim();
+            if (!newName || newName === category.name) return;
+  
+            this.http.post<any>(`${environment.apiUrl}/updateCategory.php`, {
+              id: category.id,
+              name: newName
+            }).subscribe({
+              next: async (res) => {
+                if (res.success) {
+                  category.name = newName; // Update in local list
+                  const toast = await this.toastCtrl.create({
+                    message: 'Categoria actualizada.',
+                    duration: 2000,
+                    color: 'success'
+                  });
+                  toast.present();
+                }
+              },
+              error: async () => {
+                const toast = await this.toastCtrl.create({
+                  message: 'Error al actualizar.',
+                  duration: 2000,
+                  color: 'danger'
+                });
+                toast.present();
+              }
+            });
+          }
+        }
+      ]
+    });
+  
+    await alert.present();
+  }
+
   async deleteCategory(categoryId: number) {
     const alert = await this.alertCtrl.create({
       header: 'Eliminar categoria?',
