@@ -36,7 +36,17 @@
 
 
     <div class="menu-links">
-      <a href="/account/login" class="menu-account"><ion-icon name="person-outline" class="icon icon-account"></ion-icon>Iniciar sesion</a>
+      <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
+        <a href="/account/login" class="menu-account">
+          <ion-icon name="person-outline" class="icon icon-account"></ion-icon>Iniciar sesión
+        </a>
+      </ng-container>
+      
+      <ng-template #loggedInBlock>
+        <a (click)="logout()" class="menu-account">
+          <ion-icon name="log-out-outline" class="icon icon-account"></ion-icon>Cerrar sesión
+        </a>
+      </ng-template>      
       
       <ul class="list list-social list-unstyled">
         <li class="item">

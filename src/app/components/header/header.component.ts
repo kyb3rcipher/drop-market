@@ -15,13 +15,20 @@ export class HeaderComponent  implements OnInit {
   loading = false;
   errorMessage = '';
   isAdmin: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(private http: HttpClient, private storage: Storage) {}
 
   async ngOnInit() {
     await this.storage.create();
     this.loadCategories();
+    this.checkLoginStatus();
     this.checkAdmin();
+  }
+
+  async checkLoginStatus() {
+    const userData = await this.storage.get('userData');
+    this.isLoggedIn = !!userData;
   }
 
   async checkAdmin() {
@@ -30,6 +37,14 @@ export class HeaderComponent  implements OnInit {
       this.isAdmin = true;
     }
   }
+
+  async logout() {
+    await this.storage.remove('userData');
+    this.isLoggedIn = false;
+    this.isAdmin = false;
+    window.location.href = '/';
+  }
+  
 
   loadCategories() {
     this.loading = true;
