@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+<main>
+  <table style="width: 100%;">
+    <thead>
+        <tr>
+          <th># ID</th>
+          <th>Nombre</th>
+          <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories; let i = index">
+          <td><p>{{ i + 1 }}</p></td>
+          <td>{{ category.name }}</td>
+          <td style="width: 1%; white-space: nowrap;">
+            <ion-button><ion-icon name="pencil-outline"></ion-icon></ion-button>
+            <ion-button (click)="deleteCategory(category.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          </td>
+        </tr>      
+    </tbody>
+</table>
+</main>
+
+
+<app-footer></app-footer>
+</ion-content>
