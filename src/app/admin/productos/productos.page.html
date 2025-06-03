@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+<main>
+  <h1>Productos</h1>
+  <table style="width: 100%;">
+    <thead>
+        <tr>
+          <th># ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Categoria</th>
+          <th>Descripcion</th>
+          <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos; let i = index">
+          <td><p>{{ i + 1 }}</p></td>
+          <td>{{ producto.name }}</td>
+          <td>{{ producto.price | currency }}</td>
+          <td>{{ producto.category_name }}</td>
+          <td>{{ producto.description }}</td>
+          <td style="width: 1%; white-space: nowrap;">
+            <!-- <ion-button (click)="editBrand(marca)"><ion-icon name="pencil-outline"></ion-icon></ion-button> -->
+            <ion-button (click)="deleteProducto(producto)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          </td>
+        </tr>      
+    </tbody>
+</table>
+</main>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <!-- <ion-fab-button (click)="addBrand()"> -->
+    <ion-icon name="add"></ion-icon>
+  <!-- </ion-fab-button> -->
+</ion-fab>
+
+
+<app-footer></app-footer>
+</ion-content>
