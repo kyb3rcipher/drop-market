@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./admin/categorias/categorias.module').then( m => m.CategoriasPageModule),
     // canActivate: [notAuthGuard]
   },
+  {
+    path: 'admin/marcas',
+    loadChildren: () => import('./admin/marcas/marcas.module').then( m => m.MarcasPageModule)
+  },
 ];
 
 @NgModule({

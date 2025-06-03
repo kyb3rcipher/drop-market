@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+<main>
+  <h1>Marcas</h1>
+  <table style="width: 100%;">
+    <thead>
+        <tr>
+          <th># ID</th>
+          <th>Nombre</th>
+          <th>Categoria</th>
+          <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let marca of marcas; let i = index">
+          <td><p>{{ i + 1 }}</p></td>
+          <td>{{ marca.brand_name }}</td>
+          <td>{{ marca.category_name }}</td>
+          <td style="width: 1%; white-space: nowrap;">
+            <ion-button (click)="editBrand(marca)"><ion-icon name="pencil-outline"></ion-icon></ion-button>
+            <ion-button (click)="deleteBrand(marca)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          </td>
+        </tr>      
+    </tbody>
+</table>
+</main>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addBrand()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+<app-footer></app-footer>
+</ion-content>

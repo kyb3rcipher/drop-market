@@ -6,7 +6,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.page.html',
-  styleUrls: ['./categorias.page.scss'],
+  styleUrls: ['../admin.scss', './categorias.page.scss'],
   standalone: false,
 })
 export class CategoriasPage implements OnInit {
