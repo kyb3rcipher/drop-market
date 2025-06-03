@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'admin/marcas',
     loadChildren: () => import('./admin/marcas/marcas.module').then( m => m.MarcasPageModule)
   },
+  {
+    path: 'admin/usuarios',
+    loadChildren: () => import('./admin/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
 ];
 
 @NgModule({
