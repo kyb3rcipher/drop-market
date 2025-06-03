@@ -22,7 +22,7 @@
           <td>{{ producto.category_name }}</td>
           <td>{{ producto.description }}</td>
           <td style="width: 1%; white-space: nowrap;">
-            <!-- <ion-button (click)="editBrand(marca)"><ion-icon name="pencil-outline"></ion-icon></ion-button> -->
+            <ion-button [routerLink]="['/admin/productos-editar', producto.id]"><ion-icon name="pencil-outline"></ion-icon></ion-button>
             <ion-button (click)="deleteProducto(producto)"><ion-icon name="trash-outline"></ion-icon></ion-button>
           </td>
         </tr>      
@@ -31,9 +31,9 @@
 </main>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <!-- <ion-fab-button (click)="addBrand()"> -->
+  <ion-fab-button [routerLink]="['/admin/productos-crear']">
     <ion-icon name="add"></ion-icon>
-  <!-- </ion-fab-button> -->
+  </ion-fab-button>
 </ion-fab>
 
 

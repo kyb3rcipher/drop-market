@@ -61,7 +61,7 @@ const routes: Routes = [
     loadChildren: () => import('./admin/productos-crear/productos-crear.module').then( m => m.ProductosCrearPageModule)
   },
   {
-    path: 'productos-editar',
+    path: 'admin/productos-editar/:id',
     loadChildren: () => import('./admin/productos-editar/productos-editar.module').then( m => m.ProductosEditarPageModule)
   },
 ];

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProductosEditarPageRoutingModule } from './productos-editar-routing.module';
 
 import { ProductosEditarPage } from './productos-editar.page';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductosEditarPageRoutingModule
+    ProductosEditarPageRoutingModule,
+    SharedModule
   ],
   declarations: [ProductosEditarPage]
 })
