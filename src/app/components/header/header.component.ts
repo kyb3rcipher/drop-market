@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,21 @@ export class HeaderComponent  implements OnInit {
   categories: { id: number; name: string; brands: { id: number; name: string }[]; }[] = [];
   loading = false;
   errorMessage = '';
+  isAdmin: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: Storage) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
     this.loadCategories();
+    this.checkAdmin();
+  }
+
+  async checkAdmin() {
+    const userData = await this.storage.get('userData');
+    if (userData?.email === 'admin@kyb3rcipher.com') {
+      this.isAdmin = true;
+    }
   }
 
   loadCategories() {
@@ -42,6 +53,18 @@ export class HeaderComponent  implements OnInit {
 
   currentSubmenuBrands: { id: number; name: string }[] = [];
   currentCategoryName: string = '';
+
+  showMainMenu() {
+    const mainMenu = document.getElementById('mainMenu');
+    const submenu = document.getElementById('submenu');
+    const adminSubmenu = document.getElementById('adminSubmenu');
+  
+    if (mainMenu) mainMenu.hidden = false;
+    if (submenu) submenu.hidden = true;
+    if (adminSubmenu) adminSubmenu.hidden = true;
+  }  
+
+
   showSubmenu(category: any) {
     this.currentSubmenuBrands = category.brands;
     this.currentCategoryName = category.name;
@@ -52,17 +75,23 @@ export class HeaderComponent  implements OnInit {
       mainMenu.hidden = true;
       submenu.hidden = false;
     }
-  }  
+  }
 
-  showMainMenu() {
-    this.currentSubmenuBrands = [];
+  currentAdminTitle: string = 'Admin';
+  showAdminSubmenu() {
+    this.currentAdminTitle = 'Admin';
+  
     const mainMenu = document.getElementById('mainMenu');
     const submenu = document.getElementById('submenu');
-    if (mainMenu && submenu) {
+    const adminSubmenu = document.getElementById('adminSubmenu');
+  
+    if (mainMenu && submenu && adminSubmenu) {
+      mainMenu.hidden = true;
       submenu.hidden = true;
-      mainMenu.hidden = false;
+      adminSubmenu.hidden = false;
     }
-  }
+  }  
+  
 
   formatSlug(name: string): string {
     return name
