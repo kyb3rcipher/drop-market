@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
 import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,6 +14,7 @@ export class LoginPage implements OnInit {
 
   email: string = '';
   password: string = '';
+  rememberMe: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -22,6 +24,12 @@ export class LoginPage implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
+
+    const storedData = await this.storage.get('userData');
+    if (storedData?.email) {
+      this.email = storedData.email;
+      this.rememberMe = true;
+    }
   }
 
   async login() {
@@ -57,8 +65,16 @@ export class LoginPage implements OnInit {
       next: async (res) => {
         if (res.success) {
           alerts?.classList.remove('show');
-          await this.storage.set('userData', { email: this.email });
+
+          // Guardar o eliminar según el checkbox
+          if (this.rememberMe) {
+            await this.storage.set('userData', { email: this.email });
+          } else {
+            await this.storage.remove('userData'); // Asegúrate de eliminar los datos si no se selecciona "Mantener sesión iniciada"
+          }
+
           await this.presentToast('Login exitoso');
+          // Aquí puedes redirigir si es necesario
         } else {
           alerts?.classList.add('show');
           incorrectData?.classList.add('show');
@@ -76,7 +92,6 @@ export class LoginPage implements OnInit {
       message,
       duration: 2000,
       position: 'bottom',
-      // color: 'success',
     });
     await toast.present();
   }
