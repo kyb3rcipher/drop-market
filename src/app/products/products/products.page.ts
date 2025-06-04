@@ -18,6 +18,7 @@ export class ProductsPage implements OnInit {
 
   brandName: string | null = null;
   products: any[] = [];
+  apiUrl = environment.apiUrl;
 
   constructor(
     private route: ActivatedRoute,

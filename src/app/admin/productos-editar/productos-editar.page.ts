@@ -17,12 +17,13 @@ export class ProductosEditarPage implements OnInit {
     price: null as number | null,
     description: '',
     brand_id: null as number | null,
-    image: '', // ruta imagen actual
+    image: '',
   };
 
   brands: any[] = [];
   selectedImageFile: File | null = null;
   isEditing = false;
+  apiUrl = environment.apiUrl;
 
   constructor(
     private route: ActivatedRoute,

@@ -2,7 +2,7 @@
 
 <ion-content id="main-content" [fullscreen]="true">
 <main>
-  <img src="http://127.0.0.1:8000/{{ product?.image }}">
+  <img src="{{apiUrl}}/{{ product?.image }}">
 
   <h1>{{ product?.name }}</h1>
   <h3>{{ product?.price }}</h3>
@@ -46,7 +46,7 @@
   <div class="products">
     <div *ngFor="let product of products | slice:0:4"> <!-- Max 4 product card -->
       <ion-card (click)="goToProductDetail(product.id)" style="cursor: pointer;">
-        <img src="http://127.0.0.1:8000/{{product.image}}" />
+        <img src="{{apiUrl}}/{{product.image}}" />
         <ion-card-content>
           <h2 id="product-title">{{ product.title }}</h2>
           <p>$ {{ product.price }}</p>

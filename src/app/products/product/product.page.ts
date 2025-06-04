@@ -16,6 +16,7 @@ export class ProductPage implements OnInit {
   size: any = '';
 
   products: any[] = [];
+  apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 

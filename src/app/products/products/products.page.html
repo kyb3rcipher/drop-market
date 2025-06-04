@@ -10,7 +10,7 @@
   <div class="products">
     <div *ngFor="let product of products">
       <ion-card (click)="goToProductDetail(product.id)" style="cursor: pointer;">
-        <img src="http://127.0.0.1:8000/{{ product.image }}" />
+        <img src="{{apiUrl}}/{{ product.image }}" />
         <ion-card-content>
           <h2>{{ product.name }}</h2>
           <p>$ {{ product.price }} MXN</p>
